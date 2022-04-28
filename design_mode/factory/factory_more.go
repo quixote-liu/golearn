@@ -1,11 +1,7 @@
-package factory_mode
+package factory
 
 // 当创建的对象不是简单的new一下就可以，而是需要做其他各种初始化操作的时候，
-// 可以使用工厂方法模式
-
-type Reader interface {
-	Read() string
-}
+// 可以使用工厂方法模式，为每个复杂的对象创建一个相应的工厂，然后这个工厂会创建出实例，此实例
 
 type RequestMessage struct {
 	Body   []byte

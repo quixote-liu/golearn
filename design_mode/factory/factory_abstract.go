@@ -6,9 +6,9 @@ type Reader interface {
 	Read() string
 }
 
-type Booker struct{}
+type Screen struct{}
 
-func (b Booker) Read() string {
+func (s Screen) Read() string {
 	return "read book"
 }
 
@@ -30,9 +30,31 @@ type ReaderWriterFactoryer interface {
 type ReaderWriterFactory struct{}
 
 func (f ReaderWriterFactory) CreateReader() Reader {
-	return Booker{}
+	return Screen{}
 }
 
 func (f ReaderWriterFactory) CreateWriter() Writer {
 	return Paper{}
+}
+
+// ---------------- provide message ------------------
+
+func RequestBody() []byte {
+	return []byte("request body...")
+}
+
+func ResponseBody() []byte {
+	return []byte("response body...")
+}
+
+type RequestHelper struct{}
+
+func (rh RequestHelper) Help() {
+	fmt.Println("help doing somethings...")
+}
+
+type ResponseHelper struct{}
+
+func (rh ResponseHelper) Help() {
+	fmt.Println("help doing somethings...")
 }

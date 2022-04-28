@@ -1,6 +1,7 @@
-package fatory
+package factory
 
 // 一般而言我们采用NewName来创建对象/接口，当它返回的是接口的时候，其实就是简单工厂模式。
+// 一般这种情况会有一个if else来判断，当增加新的对象时，就要增加新的判断条件，这是缺点之一。
 
 type Booker interface {
 	Name() string

@@ -58,6 +58,9 @@ func (b *RequestOptsBuilder) SetKeepResponse(v bool) *RequestOptsBuilder {
 
 func (b *RequestOptsBuilder) Build() *RequestOpts {
 	// 在这里可以做一些设置默认值的操作
+	if b.MoreHeaders == nil {
+		b.MoreHeaders = make(map[string]interface{})
+	}
 
 	return (*RequestOpts)(b)
 }

@@ -3,7 +3,6 @@ package builder
 import (
 	"bytes"
 	"encoding/json"
-	"fmt"
 	"io/ioutil"
 	"net/http"
 	"net/http/httptest"
@@ -58,5 +57,5 @@ func TestHttpReqeustBuilder(t *testing.T) {
 	_ = json.NewDecoder(resp.Body).Decode(&actual)
 
 	// 这里并没有进行断言，可以简单查看一下其中的信息
-	fmt.Println("actual:", actual)
+	// fmt.Println("actual:", actual)
 }
